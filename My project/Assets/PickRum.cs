@@ -30,23 +30,7 @@ public class PickRum : MonoBehaviour
 
         }
     }
-    IEnumerator MoveAfterOtherArm()
-    {
-        // Đợi cho đến khi cánh tay kia mang đồ đi
-        yield return new WaitUntil(() => otherArm.GetComponent<OtherArmScript>().IsItemTaken());
-
-        // Sau khi cánh tay kia đã mang đồ đi, thì cánh tay này mới chuyển động
-        Debug.Log("Other arm has taken the item. This arm is moving now.");
-
-        // Thực hiện chuyển động của cánh tay này, ví dụ:
-        // transform.Translate(Vector3.right * 2.0f);
-
-        // Đợi thêm một khoảng thời gian nếu cần
-        yield return new WaitForSeconds(moveDelay);
-
-        // Thực hiện các hành động khác sau khi chuyển động
-        Debug.Log("Arm movement completed.");
-    }
+    
     IEnumerator MoveAndPick(GameObject __rum, GameObject __forkpoint, GameObject __arm, GameObject __endpoint)
     {
         //  thong so  khoang cach Y height
